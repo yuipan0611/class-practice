@@ -1,0 +1,235 @@
+html {
+    scroll-behavior: smooth;
+}
+* {margin: 0; padding: 0;}
+.hero{
+    max-width: 800px;
+    margin: 80px auto;
+    padding: 0 24px;
+}
+.hero-bread-crumbs{
+    margin-bottom: 28px;
+    font-size: 14px;
+    color: #64748b;
+}
+.hero h1{
+    margin:0 0 24px;
+    font-size: clamp(36px, 5vw, 56px);
+    color:#111827;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+.hero-description{
+    margin-bottom: 28px;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #64748b;
+}
+.hero-bottom{
+    display:inline-block;
+    padding: 12px 18px;
+    margin-bottom: 28px;
+    border-radius: 10px;
+    background-color: #171717;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.hero-meta {
+    margin-bottom: 32px;
+    color: #64748b;
+    font-size: 14px;
+}
+.hero-meta {
+    margin-bottom: 32px;
+    color: #64748b;
+    font-size: 14px;
+}
+.orange {
+    color: orange;
+    font-size: 20px;
+    font-weight: bold;
+}
+.blue {
+    color: blue;
+    font-size: 30px;
+    font-weight: bold;
+}
+.green {
+    color: green;
+    font-size: 40px;
+    font-weight: 100px;
+}
+
+@font-face {
+    font-family: 'M PLUS Special';
+    src: url('./fonts/MPLUSU-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+.font-family1 {
+    font-family: 'M PLUS 1p', sans-serif;
+}
+.font-family2 {
+    font-family: "新細明體", "標楷體", "微軟正黑體", "細明體", "Arial", "sans-serif";
+}
+.font-family3 {
+    font-family: 'M PLUS Special', sans-serif;
+    font-weight: 900;
+}
+.monsieur-la-doulaise-regular {
+    font-family: "Monsieur La Doulaise";
+    font-weight: 800;
+    font-style: normal;
+    color: red;
+}
+.lavishly-yours-regular {
+    font-family: "Lavishly Yours", cursive;
+    font-weight: 500;
+    font-style: normal;
+    color: blue;
+}
+.italic {
+    font-style: italic; color: green; text-decoration: underline; font-size: 30px;
+
+}
+.text-align1 {
+    text-align: left;
+    color: red;
+    font-size: 20px;
+}
+.text-align2 {
+    text-align: justify;
+    color: blue;
+    font-size: 20px;
+}
+#theH1 {
+    color: #64748b;
+    font-style: italic;
+}
+/* * {
+    font-size: 20px ;
+} */
+/* * { color: aquamarine; } */
+h2 {color:red;}
+.font1 {color: blue;}
+.font {color: green;}
+
+a{
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+a:link{
+    text-decoration: underline;
+}
+a:visited{
+    color: aliceblue;
+}
+a:hover{
+    transform: scale(1.2);
+}
+a:active{
+    color: yellow;
+}
+.scroll-to-top,
+.scroll-to-top:visited {
+    color: #1d4ed8;
+}
+
+.my-list {
+    list-style-type: square;
+}
+/* 偽元素選擇器 */
+.ul2 > li::before{
+    content: "😊 "
+}
+.ul2 > li::after{
+    content: " ❤"
+}
+
+/* 圖片邊框練習 */
+img.cat {
+    width: 300px;
+    height: 300px;
+    border-top: 50px solid #64748b;
+    border-right: 70px solid aliceblue;
+    border-bottom: 90px solid #64748b;
+    border-left: 70px solid aliceblue;
+    padding: 30px;
+    color: grey;
+    margin: 50px;
+    margin-bottom: 1%;
+    border-radius: 50px 50px 50px 50px;
+}
+.circle {
+    width: 200px;
+    height: 200px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+.capsule{
+    width: 400px;
+    height: 50px;
+    background-color: lightblue;
+    border: 3px, solid, navy;
+    border-radius: 52px;
+}
+.box1{
+    width: 200px;
+    height: 100px;
+    border: 3px solid red;
+    margin: 10px;
+    border-radius: 20px;
+    text-align: center;
+}
+.outside-box{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.img2{
+    float: left;
+    width: 150px;
+    margin: 0 16px 16px 0;
+}
+.img3{
+    float: right;
+}
+p{
+    font-size: 20px;
+    text-align: justify;
+    line-height: 1.7;
+    color:black;
+    clear: both;
+}
+.caption
+.table1{
+    width: 1200px;
+    border-collapse: collapse;
+    /* background-color: brown; */
+}
+.table1 th,
+.table1 td{
+    border: 1px solid black;
+    color: #111827;
+    padding: 4px 8px;
+}
+/* 斑馬紋：奇數列淺藍、偶數列白 */
+.table1 tbody tr:nth-child(odd){
+    background-color: lightblue;
+}
+.table1 tbody tr:nth-child(even){
+    background-color: white;
+}
+/* 漲跌顏色：漲綠、跌紅、平盤灰 */
+.table1 td.up{
+    color: green;
+    font-weight: bold;
+}
+.table1 td.down{
+    color: red;
+    font-weight: bold;
+}
+.table1 td.flat{
+    color: gray;
+}

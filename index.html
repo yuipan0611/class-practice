@@ -9,119 +9,13 @@
     <title>上課作業</title>
     <link rel="icon" href="favicon.ico?v=2" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-        <style>
-            .hero{
-                max-width: 800px;
-                margin: 80px auto;
-                padding: 0 24px;
-            }
-            .hero-bread-crumbs{
-                margin-bottom: 28px;
-                font-size: 14px;
-                color: #64748b;
-            }
-            .hero h1{
-                margin:0 0 24px;
-                font-size: clamp(36px, 5vw, 56px);
-                color:#111827;
-                line-height: 1.2;
-                letter-spacing: -1px;
-            }
-            .hero-description{
-                margin-bottom: 28px;
-                font-size: 18px;
-                line-height: 1.7;
-                color: #64748b;
-            }
-            .hero-bottom{
-                display:inline-block;
-                padding: 12px 18px;
-                margin-bottom: 28px;
-                border-radius: 10px;
-                background-color: #171717;
-                color: white;
-                text-decoration: none;
-                font-weight: bold;
-            }
-            .hero-meta {
-                margin-bottom: 32px;
-                color: #64748b;
-                font-size: 14px;
-            }
-            .hero-meta {
-                margin-bottom: 32px;
-                color: #64748b;
-                font-size: 14px;
-            }
-            .orange {
-                color: orange;
-                font-size: 20px;
-                font-weight: bold;
-            }
-            .blue {
-                color: blue;
-                font-size: 30px;
-                font-weight: bold;
-            }
-            .green {
-                color: green;
-                font-size: 40px;
-                font-weight: 100px;
-            }
-        </style>
-
-
-
-<style>
-    @font-face {
-        font-family: 'M PLUS Special';
-        src: url('./fonts/MPLUSU-Black.ttf') format('truetype');
-        font-weight: 900;
-        font-style: normal;
-    }
-    .font-family1 {
-        font-family: 'M PLUS 1p', sans-serif;
-    }
-    .font-family2 {
-        font-family: "新細明體", "標楷體", "微軟正黑體", "細明體", "Arial", "sans-serif";
-    }
-    .font-family3 {
-        font-family: 'M PLUS Special', sans-serif;
-        font-weight: 900;
-}
-.monsieur-la-doulaise-regular {
-    font-family: "Monsieur La Doulaise",
-    font-weight: 800;
-    font-style: normal;
-    color: red;
-}
-.lavishly-yours-regular {
-    font-family: "Lavishly Yours", cursive;
-    font-weight: 500;
-    font-style: normal;
-    color: blue;
-}
-.italic {
-    font-style: italic; color: green; text-decoration: underline; font-size: 30px;
-
-}
-.text-align1 {
-    text-align: left;
-    color: red;
-    font-size: 20px;
-}
-.text-align2 {
-    text-align: justify;
-    color: blue;
-    font-size: 20px;
-}
-</style>
+    <link rel="stylesheet" href="css_external_style_sheet.css">
 </head>
 <body>
 <!-- 這是註解 -->
-    <h1 class="hero-main-title m-0 p-0 text-[32px] font-semibold tracking-normal text-(--Labels-Primary)" style="line-height:48px"><span>2026 年值得一試的免費部落格網站架設工具Hello World!!!!!!</span>
+    <h1 class="hero-main-title m-0 p-0 text-[32px] font-semibold tracking-normal text-(--Labels-Primary)" style="line-height:48px" id = "theH1"><span>2026 年值得一試的免費部落格網站架設工具Hello World!!!!!!</span>
     </h1>
-    <h2>標題二</h2>
+    <h2 class="font1" id="font1" style="color: azure;">標題二</h2>
     <h3>標題三</h3>
     <h4>標題四</h4>
     <h5>標題五</h5>
@@ -129,19 +23,57 @@
     <p>這是一個段落。</p>
     <p>這是另一<br>個段落。</p>
     <p>這是第三個段落。</p>
-    <img src="https://picsum.photos/id/10/600/400" alt="這是一張固定圖片picsum" title="這是一張固定圖片picsum" width="600" height="400">
-    <img src="./images/apple-touch-icon.png" alt="Apple Touch Icon"
+    <img class="https://picsum.photos/id/10/600/400" alt="這是一張固定圖片picsum" title="這是一張固定圖片picsum" width="600" height="400">
+    <img class="cat" src="./images/apple-touch-icon.png" alt="Apple Touch Icon"
     title="這是一隻貓咪"
     width="500" height="500">
-    <ul>
+    <img class="cat" 
+    src="./images/apple-touch-icon.png" alt="Apple Touch Icon"
+    title="這是一隻貓咪">
+    <img class="cat" src="./images/apple-touch-icon.png" alt="Apple Touch Icon"
+    title="這是一隻貓咪">
+    <img class="cat" src="./images/apple-touch-icon.png" alt="Apple Touch Icon"
+    title="這是一隻貓咪">
+</hr>
+    <div class="circle"></div>
+    <a class="scroll-to-top" href="#theH1">scroll-to-top</a>
+    <div class="capsule"></div>
+    <ul class="my-list">
+    </hr>
+    <div class="box1"></div>
+        <li>項目一</li>
+        <li>項目二</li>
+    </ul>
+    <ul class="ul2">
         <li>項目一</li>
         <li>項目二</li>
     </ul>
     <hr>
     <div>&trade;&copy;</div>
-    <div>區塊容器*3</div>
-    <div style="background-color: aqua;">區塊容器*3</div>
+    <div class="outside-box">
+        <div class="box1">內容文字測試</div>
+        <div class="box1">內容文字測試</div>
+        <div class="box1">內容文字測試</div>
+    </div>
+    <div style="background-color: aqua;">區塊容器</div>
     <span style="background-color: yellow;">行內元素</span>
+    <h2>浮動樣式float
+        <img class="img2" src="./images/apple-touch-icon.png" alt="Apple Touch Icon"
+    title="這是一隻貓咪">
+        <img class="img3" src="./images/apple-touch-icon.png" alt="Apple Touch Icon"
+    title="這是一隻貓咪">
+        <p>ipsum dolor sit amet consectetur adipisicing elit. Unde inventore ipsum tenetur cupiditate, laborum aliquam sed deserunt itaque dolorem quasi saepe reiciendis? A numquam quisquam commodi at enim rem laborum.
+        Reiciendis nihil vitae consequatur eaque ipsam debitis deleniti officia, placeat aut magni rerum voluptatum, dicta tempore, impedit deserunt. Suscipit mollitia numquam impedit, quos in dolorem necessitatibus harum eveniet libero quo!
+        Numquam deserunt corrupti corporis esse ducimus. Cupiditate dolore sit debitis natus illum nostrum? Iure, reiciendis quis, ut ab tenetur explicabo facere dolores commodi quibusdam quisquam dignissimos voluptatem dicta similique impedit!
+        Rem eaque consequatur modi sit, fugiat et doloremque porro assumenda blanditiis ea odio nisi nihil quibusdam laudantium veritatis obcaecati distinctio optio ut explicabo laborum nesciunt. Mollitia necessitatibus ipsam labore est?
+        Laboriosam enim atque debitis dicta recusandae inventore ab consectetur distinctio vel! Nam quidem labore, nihil deleniti magni aliquam laboriosam animi. Cumque sed iure quam vel necessitatibus nemo corrupti saepe modi.
+        Dignissimos tenetur suscipit, mollitia beatae placeat aut inventore, velit maiores consequuntur culpa quod neque vel porro est. Molestias dolore veritatis esse quibusdam doloremque quod doloribus, expedita nam voluptate commodi rem!
+        A, excepturi! Quod dolores quo minus hic, eos voluptates voluptatibus libero eum magni, exercitationem sit porro? Vero fugit commodi tempora maiores accusantium, in velit adipisci iusto sit odio sapiente repellat!
+        Culpa, perferendis? Tempora optio iste quam numquam, magnam at ab praesentium debitis labore qui nisi, nam aliquid. Laborum accusamus molestiae, soluta a commodi, ratione quae asperiores ipsum unde sapiente possimus?
+        Soluta, amet. Harum voluptatem cumque placeat consectetur laboriosam, quod, non temporibus odio quasi praesentium expedita quia delectus debitis. Corporis commodi iure natus, deleniti ullam quasi magnam itaque minima soluta iusto?
+        Quidem voluptas deserunt explicabo error. Suscipit, blanditiis quibusdam! Laudantium maxime sit voluptas. Iure architecto at nesciunt aspernatur, aperiam pariatur reiciendis. Porro, accusantium commodi non error repellendus amet exercitationem nostrum velit.
+        </p>
+    </h2>
     <div>This short booklet provides an accessible view on the past and present of the Peace Palace. <span style="background-color: red;"The book treats the origins and artistic highlights of the Palace</span>, tells about the institutions the Peace Palace houses, and gives an impression of how countries try to solve their disputes here by means of jurisdiction, mediation and arbitration.
 
 The booklet contains several images of the main halls and rooms, as well as an overview of all the precious gifts donated by different countries all over the world during the past century.</div>
@@ -231,5 +163,63 @@ The booklet contains several images of the main halls and rooms, as well as an o
 </h2>
 <p class="text-align1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, incidunt iure omnis doloremque earum, hic reiciendis maxime, recusandae quibusdam eaque ut eum quas amet. Odit eos ad quisquam veritatis eaque!</p>
 <p class="text-align2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, incidunt iure omnis doloremque earum, hic reiciendis maxime, recusandae quibusdam eaque ut eum quas amet. Odit eos ad quisquam veritatis eaque!</p>
+<table class="table1">
+    <caption class="caption">2026/9/1台股
+
+    </caption>
+    <thead>
+        <tr>
+            <th>股票代號</th>
+            <th>公司名稱</th>
+            <th>股價</th>
+            <th>漲跌</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>2330</td>
+            <td>台積電</td>
+            <td>1080</td>
+            <td class="up">+15</td>
+        </tr>
+        <tr>
+            <td>2317</td>
+            <td>鴻海</td>
+            <td>205</td>
+            <td class="down">-2.5</td>
+        </tr>
+        <tr>
+            <td>2454</td>
+            <td>聯發科</td>
+            <td>1345</td>
+            <td class="up">+30</td>
+        </tr>
+        <tr>
+            <td>2412</td>
+            <td>中華電</td>
+            <td>128</td>
+            <td class="flat">0</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">加權指數</td>
+            <td>23,150</td>
+        </tr>
+    </tfoot>
+</table>
+<h1>表單元素
+    <form action="#" method="get" enctype="application/x-www-form-urlencoded">
+        <label for="name">姓名：</label>
+        <input type="text" id="name" name="name" required placeholder="請輸入姓名" maxlength="20" minlength="2">
+        <label for="password">密碼：</label>
+        <input type="password" id="password" name="password" required placeholder="請輸入密碼" maxlength="20" minlength="6">
+        <label for="mymemo">備忘錄</label>
+        <textarea name="" id="mymemo" cols="30" rows="10" placeholder="最大上限150字"></textarea>
+        <input type="submit" value="送出">
+        <input type="reset" value="重置">
+    </form>
+    
+</h1>
 </body>
 </html>
