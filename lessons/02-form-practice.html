@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- lang 指定頁面主要語言，讓瀏覽器和螢幕閱讀器正確辨識。 -->
+<html lang="zh-Hant-TW">
+  <head>
+    <!-- charset 設定文字編碼；viewport 讓頁面寬度配合手機螢幕。 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習二：課堂進度表單</title>
+    <!-- rel="stylesheet" 表示載入外部 CSS；href 是相對於本頁的檔案路徑。 -->
+    <link rel="stylesheet" href="./styles/practice.css">
+  </head>
+  <body>
+    <main class="practice-page">
+      <!-- 站內跨頁連結：../ 先回上一層資料夾，再開啟首頁 index.html。 -->
+      <a class="back-link" href="../index.html">← 回到綜合練習首頁</a>
+      <h1>練習二：課堂進度回報</h1>
+      <p class="practice-note">
+        練習重點：每個控制項都要有清楚的 <code>label</code>、
+        <code>id</code>、<code>name</code> 和 <code>value</code>，並比較不同按鈕寫法。
+      </p>
+
+      <!--
+        action 是資料送往的位置；method="get" 會把欄位資料放到網址參數中。
+        enctype 指定資料編碼；一般文字表單最常使用 application/x-www-form-urlencoded。
+      -->
+      <form
+        class="progress-form"
+        action="#"
+        method="get"
+        enctype="application/x-www-form-urlencoded"
+      >
+        <div class="form-row">
+          <!-- label 的 for 要和 input 的 id 完全相同，點文字才會選到欄位。 -->
+          <label for="student-name">姓名</label>
+          <!--
+            value 是欄位的預設內容；placeholder 只有在欄位為空時才會出現。
+            required 表示必填；maxlength 限制最多可輸入的字元數。
+          -->
+          <input
+            type="text"
+            id="student-name"
+            name="student_name"
+            value="王大明"
+            autocomplete="name"
+            required
+            maxlength="20"
+            placeholder="請輸入姓名"
+          >
+        </div>
+
+        <div class="form-row">
+          <!--
+            type="password" 會把輸入內容顯示成圓點；
+            minlength 與 maxlength 分別限制最少及最多字元數。
+          -->
+          <label for="class-password">課堂密碼</label>
+          <input
+            type="password"
+            id="class-password"
+            name="class_password"
+            autocomplete="current-password"
+            minlength="6"
+            maxlength="8"
+            required
+            placeholder="請輸入 6~8 個字元"
+          >
+        </div>
+
+        <div class="form-row">
+          <!-- textarea 適合輸入多行文字，maxlength 限制最多字數。 -->
+          <label for="learning-note">今天的備忘錄</label>
+          <textarea
+            id="learning-note"
+            name="learning_note"
+            rows="5"
+            maxlength="150"
+            placeholder="最多 150 字"
+          ></textarea>
+        </div>
+
+        <fieldset>
+          <!-- fieldset 把相關欄位分組；legend 是這組欄位的標題。 -->
+          <legend>今天的理解程度（單選）</legend>
+          <!-- radio 使用相同的 name，這一組就只能選一個；value 是送出的實際值。 -->
+          <label>
+            <input type="radio" name="understanding" value="followed" checked>
+            跟得上
+          </label>
+          <label>
+            <input type="radio" name="understanding" value="fast">
+            有點太快
+          </label>
+          <label>
+            <input type="radio" name="understanding" value="review">
+            需要再複習
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>想複習的主題（可複選）</legend>
+          <!--
+            checkbox 可以同時勾選多個；name 後面的 [] 表示會送出一組答案。
+            checked 表示網頁剛開啟時，這個選項預設已勾選。
+          -->
+          <label>
+            <input type="checkbox" name="review_topics[]" value="table" checked>
+            表格
+          </label>
+          <label>
+            <input type="checkbox" name="review_topics[]" value="form">
+            表單
+          </label>
+          <label>
+            <input type="checkbox" name="review_topics[]" value="selector" checked>
+            CSS 選擇器
+          </label>
+        </fieldset>
+
+        <div class="form-actions">
+          <!--
+            <input> 按鈕用 value 顯示文字；disabled 表示目前不能操作。
+            老師範例同時示範 input 與 button 兩種按鈕寫法，所以這裡都保留。
+          -->
+          <!-- 課堂需要比較 input 與 button，因此保留這個合法的 input 按鈕寫法。 -->
+          <!-- [html-validate-disable-next prefer-button] -->
+          <input type="submit" value="送出（input）" disabled>
+          <!-- [html-validate-disable-next prefer-button] -->
+          <input type="reset" value="重設（input）">
+
+          <!--
+            <button> 把顯示文字放在開始與結束標籤之間。
+            submit 會送出表單；reset 會還原預設值；button 本身不會送出。
+          -->
+          <button type="submit">送出（button）</button>
+          <button type="reset">重設（button）</button>
+          <button type="button" disabled>一般按鈕</button>
+        </div>
+      </form>
+
+      <p class="form-reminder">
+        這是純 HTML 練習，按下送出只會把欄位整理成網址參數，不會真的傳給老師。
+      </p>
+
+      <!--
+        送出後可以觀察：
+        1. 網址會出現 ?student_name=... 等欄位資料。
+        2. 單選題只會送出一個 understanding 值。
+        3. 複選題會依照勾選結果送出多個 review_topics[] 值。
+        4. 有 disabled 的控制項不能操作，也不會被送出。
+
+        這段是給閱讀程式碼的人看的 HTML 註解，不會顯示在前端頁面。
+      -->
+    </main>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!-- lang 指定頁面主要語言，讓瀏覽器和螢幕閱讀器正確辨識。 -->
+<html lang="zh-Hant-TW">
+  <head>
+    <!-- charset 設定文字編碼；viewport 讓頁面寬度配合手機螢幕。 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>練習一：台股表格</title>
+    <!-- rel="stylesheet" 表示載入外部 CSS；href 是相對於本頁的檔案路徑。 -->
+    <link rel="stylesheet" href="./styles/practice.css">
+  </head>
+  <body>
+    <main class="practice-page">
+      <!-- 站內跨頁連結：../ 先回上一層資料夾，再開啟首頁 index.html。 -->
+      <a class="back-link" href="../index.html">← 回到綜合練習首頁</a>
+      <h1>練習一：台股表格</h1>
+      <p class="practice-note">
+        練習重點：用 <code>rowspan</code> 合併上下列，並用
+        <code>colspan</code> 合併左右欄。
+      </p>
+
+      <div class="table-scroll">
+        <!-- table 是整張表格；caption 是表格的大標題。 -->
+        <table class="stock-table">
+          <caption>2026/9/1 台股行情練習</caption>
+          <thead>
+            <tr>
+              <!-- rowspan="2"：這個欄位向下合併兩列。 -->
+              <th rowspan="2" scope="col">股票代號</th>
+              <th rowspan="2" scope="col">公司名稱</th>
+              <!-- colspan="2"：這個欄位向右合併兩欄。 -->
+              <th colspan="2" scope="colgroup">今日行情</th>
+            </tr>
+            <tr>
+              <!-- scope="col" 表示這兩格分別是下方資料欄的標題。 -->
+              <th scope="col">成交價</th>
+              <th scope="col">漲跌</th>
+            </tr>
+          </thead>
+          <!-- tbody 放主要資料，一個 tr 代表一列，一個 td 代表一格。 -->
+          <tbody>
+            <tr>
+              <td>2330</td>
+              <td>台積電</td>
+              <td>1080</td>
+              <td class="up">+15</td>
+            </tr>
+            <tr>
+              <td>2317</td>
+              <td>鴻海</td>
+              <td>205</td>
+              <td class="down">-2.5</td>
+            </tr>
+            <tr>
+              <td>2454</td>
+              <td>聯發科</td>
+              <td>1345</td>
+              <td class="up">+30</td>
+            </tr>
+            <tr>
+              <td>2412</td>
+              <td>中華電</td>
+              <td>128</td>
+              <td class="flat">0</td>
+            </tr>
+          </tbody>
+          <!-- tfoot 放表格的總計或補充資訊。 -->
+          <tfoot>
+            <tr>
+              <th colspan="2" scope="row">加權指數</th>
+              <td colspan="2">23,150</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <section class="review-box">
+        <h2>看完可以自己檢查</h2>
+        <ul>
+          <li>「股票代號」和「公司名稱」各跨了兩列。</li>
+          <li>「今日行情」橫跨「成交價」與「漲跌」兩欄。</li>
+          <li>滑鼠移到資料列時，背景顏色會改變。</li>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>

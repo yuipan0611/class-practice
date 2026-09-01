@@ -1,235 +1,450 @@
 html {
-    scroll-behavior: smooth;
-}
-* {margin: 0; padding: 0;}
-.hero{
-    max-width: 800px;
-    margin: 80px auto;
-    padding: 0 24px;
-}
-.hero-bread-crumbs{
-    margin-bottom: 28px;
-    font-size: 14px;
-    color: #64748b;
-}
-.hero h1{
-    margin:0 0 24px;
-    font-size: clamp(36px, 5vw, 56px);
-    color:#111827;
-    line-height: 1.2;
-    letter-spacing: -1px;
-}
-.hero-description{
-    margin-bottom: 28px;
-    font-size: 18px;
-    line-height: 1.7;
-    color: #64748b;
-}
-.hero-bottom{
-    display:inline-block;
-    padding: 12px 18px;
-    margin-bottom: 28px;
-    border-radius: 10px;
-    background-color: #171717;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-.hero-meta {
-    margin-bottom: 32px;
-    color: #64748b;
-    font-size: 14px;
-}
-.hero-meta {
-    margin-bottom: 32px;
-    color: #64748b;
-    font-size: 14px;
-}
-.orange {
-    color: orange;
-    font-size: 20px;
-    font-weight: bold;
-}
-.blue {
-    color: blue;
-    font-size: 30px;
-    font-weight: bold;
-}
-.green {
-    color: green;
-    font-size: 40px;
-    font-weight: 100px;
+  /* 點擊頁內錨點時，用平滑滾動移動到目標。 */
+  scroll-behavior: smooth;
 }
 
-@font-face {
-    font-family: 'M PLUS Special';
-    src: url('./fonts/MPLUSU-Black.ttf') format('truetype');
-    font-weight: 900;
-    font-style: normal;
+body {
+  /* margin: 0 移除瀏覽器預設外距，讓版面從視窗邊緣開始計算。 */
+  margin: 0;
+  background-color: #f8fafc;
+  color: #1f2937;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  line-height: 1.7;
 }
-.font-family1 {
-    font-family: 'M PLUS 1p', sans-serif;
-}
-.font-family2 {
-    font-family: "新細明體", "標楷體", "微軟正黑體", "細明體", "Arial", "sans-serif";
-}
-.font-family3 {
-    font-family: 'M PLUS Special', sans-serif;
-    font-weight: 900;
-}
-.monsieur-la-doulaise-regular {
-    font-family: "Monsieur La Doulaise";
-    font-weight: 800;
-    font-style: normal;
-    color: red;
-}
-.lavishly-yours-regular {
-    font-family: "Lavishly Yours", cursive;
-    font-weight: 500;
-    font-style: normal;
-    color: blue;
-}
-.italic {
-    font-style: italic; color: green; text-decoration: underline; font-size: 30px;
 
+.page-header,
+main,
+footer {
+  /* 逗號可把多個選擇器分組，讓它們共用同一組宣告。 */
+  /* min() 會選較小的值：畫面寬時最多 1100px，窄時保留左右 24px。 */
+  width: min(1100px, calc(100% - 48px));
+  margin: 0 auto;
 }
-.text-align1 {
-    text-align: left;
-    color: red;
-    font-size: 20px;
+
+.page-header {
+  padding: 48px 0 24px;
 }
-.text-align2 {
-    text-align: justify;
-    color: blue;
-    font-size: 20px;
+
+section {
+  margin: 24px 0;
+  padding: 24px;
+  border: 1px solid #dbe4ee;
+  border-radius: 12px;
+  background-color: white;
 }
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h2 {
+  color: #b91c1c;
+}
+
+a {
+  /*
+    這組樣式套用到頁面裡所有 <a>；CSS 只控制外觀，
+    真正的跳轉目的地由 HTML 的 href 決定。
+  */
+  /* transition 讓 hover 時的 transform 變化在 0.3 秒內平滑完成。 */
+  display: inline-block;
+  margin: 4px 8px 4px 0;
+  color: #1d4ed8;
+  transition: transform 0.3s ease;
+}
+
+a:link {
+  /* :link、:visited、:hover、:active 是連結在不同狀態下的偽類別。 */
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #6d28d9;
+}
+
+a:hover {
+  transform: scale(1.05);
+}
+
+a:active {
+  color: #ca8a04;
+}
+
+.lesson-links {
+  /* HTML 嵌套位置：header > nav.lesson-links > a（兩個站內練習頁連結）。 */
+  /* Flex 讓兩個練習連結橫向排列，空間不足時可以換行。 */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.lesson-links a {
+  /* 中間的空格表示：只選取 nav.lesson-links 裡面的跨頁 a 連結。 */
+  padding: 10px 16px;
+  border-radius: 8px;
+  background-color: #1d4ed8;
+  color: white;
+  text-decoration: none;
+}
+
 #theH1 {
-    color: #64748b;
-    font-style: italic;
+  /* # 選取唯一的 id；. 選取可重複使用的 class。 */
+  color: #475569;
+  font-style: italic;
+  line-height: 1.3;
 }
-/* * {
-    font-size: 20px ;
-} */
-/* * { color: aquamarine; } */
-h2 {color:red;}
-.font1 {color: blue;}
-.font {color: green;}
 
-a{
-    display: inline-block;
-    transition: transform 0.3s ease;
+.font1 {
+  color: blue;
 }
-a:link{
-    text-decoration: underline;
+
+.fixed-image {
+  max-width: 100%;
+  height: auto;
 }
-a:visited{
-    color: aliceblue;
+
+.image-gallery {
+  /* flex-wrap: wrap 讓圖片在小螢幕自動換到下一列。 */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
 }
-a:hover{
-    transform: scale(1.2);
+
+img.cat {
+  /* img.cat 只選取同時是 img 元素、而且 class 含有 cat 的項目。 */
+  /* 盒模型由內容、padding、border、margin 從內到外組成。 */
+  width: 180px;
+  height: 180px;
+  padding: 16px;
+  border: 12px solid #64748b;
+  border-radius: 40px;
+  background-color: aliceblue;
 }
-a:active{
-    color: yellow;
+
+.circle {
+  /* 正方形搭配 border-radius: 50% 就會形成圓形。 */
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100px;
 }
-.scroll-to-top,
-.scroll-to-top:visited {
-    color: #1d4ed8;
+
+.capsule {
+  width: min(400px, 100%);
+  height: 50px;
+  margin-top: 16px;
+  border: 3px solid navy;
+  border-radius: 52px;
+  background-color: lightblue;
+  text-align: center;
+  line-height: 50px;
+}
+
+.box1 {
+  width: 180px;
+  min-height: 80px;
+  padding: 12px;
+  border: 3px solid red;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.outside-box {
+  /* justify-content: center 讓三個方塊在主軸方向置中。 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.block-example {
+  padding: 12px;
+  background-color: aqua;
+}
+
+.inline-example {
+  background-color: yellow;
 }
 
 .my-list {
-    list-style-type: square;
-}
-/* 偽元素選擇器 */
-.ul2 > li::before{
-    content: "😊 "
-}
-.ul2 > li::after{
-    content: " ❤"
+  list-style-type: square;
 }
 
-/* 圖片邊框練習 */
-img.cat {
-    width: 300px;
-    height: 300px;
-    border-top: 50px solid #64748b;
-    border-right: 70px solid aliceblue;
-    border-bottom: 90px solid #64748b;
-    border-left: 70px solid aliceblue;
-    padding: 30px;
-    color: grey;
-    margin: 50px;
-    margin-bottom: 1%;
-    border-radius: 50px 50px 50px 50px;
+.ul2 > li::before {
+  /* > 是直屬子元素選擇器，只選到 .ul2 下一層的 li。 */
+  /* ::before 會在 li 原本內容前面加入裝飾，不需要修改 HTML 文字。 */
+  content: "😊 ";
 }
-.circle {
-    width: 200px;
-    height: 200px;
-    border: 2px solid black;
-    border-radius: 50%;
+
+.ul2 > li::after {
+  /* ::after 會在 li 原本內容後面加入裝飾。 */
+  content: " ❤";
 }
-.capsule{
-    width: 400px;
-    height: 50px;
-    background-color: lightblue;
-    border: 3px, solid, navy;
-    border-radius: 52px;
+
+.img2,
+.img3 {
+  /* 逗號分組讓 img2 與 img3 共用相同寬度。 */
+  width: 150px;
 }
-.box1{
-    width: 200px;
-    height: 100px;
-    border: 3px solid red;
-    margin: 10px;
-    border-radius: 20px;
-    text-align: center;
+
+.img2 {
+  /* float: left 讓圖片靠左，後面的文字可以繞排。 */
+  float: left;
+  margin: 0 16px 16px 0;
 }
-.outside-box{
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+
+.img3 {
+  float: right;
+  margin: 0 0 16px 16px;
 }
-.img2{
-    float: left;
-    width: 150px;
-    margin: 0 16px 16px 0;
+
+.float-practice::after {
+  /* clear: both 清除左右浮動，避免下一個區段被浮動圖片影響。 */
+  display: block;
+  clear: both;
+  content: "";
 }
-.img3{
-    float: right;
+
+.highlight {
+  background-color: #fecaca;
 }
-p{
-    font-size: 20px;
-    text-align: justify;
-    line-height: 1.7;
-    color:black;
-    clear: both;
+
+figure {
+  margin: 20px 0;
 }
-.caption
-.table1{
-    width: 1200px;
-    border-collapse: collapse;
-    /* background-color: brown; */
+
+.anchor-links {
+  /* HTML 嵌套位置：section > nav.anchor-links > a（跳到同頁的 target1～3）。 */
+  /* sticky 讓錨點導覽捲動到頂端後暫時固定。 */
+  position: sticky;
+  top: 0;
+  padding: 8px;
+  background-color: white;
 }
+
+.anchor-space {
+  height: 180px;
+  margin: 12px 0;
+}
+
+.blue-space {
+  background-color: lightblue;
+}
+
+.salmon-space {
+  background-color: salmon;
+}
+
+.green-space {
+  background-color: lightgreen;
+}
+
+.orange {
+  color: orange;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.blue {
+  color: blue;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.green {
+  color: green;
+  font-size: 40px;
+  font-weight: 100;
+}
+
+.text-small {
+  font-size: 70%;
+}
+
+.text-large {
+  font-size: 48px;
+}
+
+.text-view-height {
+  font-size: 6vh;
+}
+
+.blue-text {
+  color: #0e577c;
+}
+
+.beige-text {
+  color: #a16207;
+}
+
+.orange-text {
+  /* 顏色可使用色名、十六進位色碼或 rgb() 等不同寫法。 */
+  color: rgb(221 100 35);
+}
+
+@font-face {
+  /* @font-face 載入專案 fonts 資料夾裡的本機字型。 */
+  font-family: "M PLUS Special";
+  src: url("./fonts/MPLUSU-Black.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 900;
+}
+
+.font-family1 {
+  font-family: "M PLUS 1p", sans-serif;
+}
+
+.font-family2 {
+  /* 字型從左到右依序嘗試；找不到前一個才使用下一個備援字型。 */
+  font-family: "PMingLiU", "DFKai-SB", "Microsoft JhengHei", Arial, sans-serif;
+}
+
+.font-family3 {
+  font-family: "M PLUS Special", sans-serif;
+  font-weight: 900;
+}
+
+.monsieur-la-doulaise-regular {
+  color: red;
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 44px;
+}
+
+.lavishly-yours-regular {
+  color: blue;
+  font-family: "Lavishly Yours", cursive;
+  font-size: 44px;
+}
+
+.italic {
+  color: green;
+  font-size: 30px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.text-align1 {
+  color: red;
+  font-size: 20px;
+  text-align: left;
+}
+
+.text-align2 {
+  color: blue;
+  font-size: 20px;
+  text-align: justify;
+}
+
+.table1 {
+  width: 100%;
+  border: 3px solid black;
+  /* collapse 把相鄰儲存格的兩條邊框合併成一條。 */
+  border-collapse: collapse;
+}
+
+.table1 caption {
+  padding: 8px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
 .table1 th,
-.table1 td{
-    border: 1px solid black;
-    color: #111827;
-    padding: 4px 8px;
+.table1 td {
+  /* 這兩個後代選擇器讓表格內的 th 和 td 共用儲存格樣式。 */
+  padding: 8px;
+  border: 1px solid black;
+  color: #111827;
+  text-align: center;
 }
-/* 斑馬紋：奇數列淺藍、偶數列白 */
-.table1 tbody tr:nth-child(odd){
-    background-color: lightblue;
+
+.table1 thead {
+  background-color: #9a0036;
 }
-.table1 tbody tr:nth-child(even){
-    background-color: white;
+
+.table1 thead th {
+  color: white;
 }
-/* 漲跌顏色：漲綠、跌紅、平盤灰 */
-.table1 td.up{
-    color: green;
-    font-weight: bold;
+
+.table1 tbody tr:nth-child(odd) {
+  /* nth-child(odd) 選取奇數列，和 even 搭配做出斑馬紋。 */
+  background-color: lightblue;
 }
-.table1 td.down{
-    color: red;
-    font-weight: bold;
+
+.table1 tbody tr:nth-child(even) {
+  background-color: white;
 }
-.table1 td.flat{
-    color: gray;
+
+.table1 td.up {
+  /* .table1 td.up 只選取 table1 裡 class="up" 的 td。 */
+  color: green;
+  font-weight: bold;
+}
+
+.table1 td.down {
+  color: red;
+  font-weight: bold;
+}
+
+.table1 td.flat {
+  color: gray;
+}
+
+.basic-form {
+  max-width: 600px;
+  padding: 20px;
+  border: 2px solid navy;
+}
+
+.basic-form > div {
+  /* Grid 把一列表單分成 100px 標籤欄和剩餘寬度的輸入欄。 */
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.basic-form input,
+.basic-form textarea {
+  /* 分組選取表單內的 input 與 textarea，避免重複寫相同宣告。 */
+  padding: 8px;
+}
+
+.basic-form textarea {
+  resize: vertical;
+}
+
+.basic-form .form-actions {
+  /* 這一列改用 Flex，讓兩顆按鈕能在水平方向置中。 */
+  display: flex;
+  grid-template-columns: none;
+  justify-content: center;
+}
+
+footer {
+  padding: 12px 0 48px;
+}
+
+.scroll-to-top,
+.scroll-to-top:visited {
+  /* HTML 嵌套位置：footer > a.scroll-to-top（跳回同頁的 #theH1）。 */
+  color: #1d4ed8;
+}
+
+@media (max-width: 640px) {
+  /* @media 是媒體查詢：只有符合括號條件時，裡面的規則才會生效。 */
+  /* 畫面小於等於 640px 時，表單改成單欄排列。 */
+  .basic-form > div {
+    grid-template-columns: 1fr;
+  }
+
+  .table1 {
+    font-size: 14px;
+  }
 }

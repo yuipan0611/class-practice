@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  background-color: #eef2ff;
+  color: #1f2937;
+  font-family: Arial, "Microsoft JhengHei", sans-serif;
+  line-height: 1.6;
+}
+
+.practice-page {
+  /* min() 取較小值；calc() 計算視窗寬度扣掉左右留白後的寬度。 */
+  width: min(900px, calc(100% - 40px));
+  margin: 40px auto;
+  padding: 28px;
+  border-radius: 16px;
+  background-color: white;
+  box-shadow: 0 12px 30px rgb(15 23 42 / 12%);
+}
+
+.back-link {
+  /* HTML 嵌套位置：main.practice-page > a.back-link（跳回上一層的 index.html）。 */
+  /* CSS 只設定顏色；實際目的地仍由 HTML 的 href="../index.html" 決定。 */
+  color: #1d4ed8;
+}
+
+.practice-note,
+.form-reminder {
+  padding: 12px 16px;
+  border-left: 5px solid #4f46e5;
+  background-color: #eef2ff;
+}
+
+code {
+  color: #9f1239;
+  font-weight: bold;
+}
+
+.table-scroll {
+  /* 表格太寬時只讓這個容器水平捲動，避免整個頁面被撐開。 */
+  overflow-x: auto;
+}
+
+.stock-table {
+  width: 100%;
+  min-width: 620px;
+  border: 4px solid #111827;
+  /* 把相鄰儲存格的邊框合併成一條線。 */
+  border-collapse: collapse;
+}
+
+.stock-table caption {
+  padding: 12px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stock-table th,
+.stock-table td {
+  /* 逗號把 th 與 td 分組，兩種儲存格便能共用相同樣式。 */
+  height: 46px;
+  padding: 6px 12px;
+  border: 1px solid #6b7280;
+  text-align: center;
+}
+
+.stock-table thead {
+  background-color: #9a0036;
+  color: white;
+}
+
+/* nth-child(odd/even) 分別選取奇數列與偶數列，做出斑馬紋。 */
+.stock-table tbody tr:nth-child(odd) {
+  background-color: #e0f2fe;
+}
+
+.stock-table tbody tr:nth-child(even) {
+  background-color: white;
+}
+
+/* :hover 只在滑鼠移到資料列上時套用。 */
+.stock-table tbody tr:hover {
+  background-color: #fef3c7;
+}
+
+.stock-table tfoot {
+  background-color: #e5e7eb;
+  font-weight: bold;
+}
+
+.up {
+  color: green;
+  font-weight: bold;
+}
+
+.down {
+  color: red;
+  font-weight: bold;
+}
+
+.flat {
+  color: gray;
+}
+
+.review-box {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: 10px;
+  background-color: #f8fafc;
+}
+
+.progress-form {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px;
+  border: 2px solid #3730a3;
+  border-radius: 12px;
+}
+
+.form-row {
+  /* Grid 把每列分成「標籤」與「輸入欄位」兩欄。 */
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+
+.form-row > label {
+  /* > 只選取 .form-row 下一層的 label，不影響更深層的標籤。 */
+  font-weight: bold;
+}
+
+.form-row input,
+.form-row textarea {
+  padding: 9px;
+  border: 1px solid #94a3b8;
+  border-radius: 6px;
+  font: inherit;
+}
+
+.form-row textarea {
+  resize: vertical;
+}
+
+fieldset {
+  margin: 20px 0;
+  padding: 16px;
+  border: 1px dashed #64748b;
+}
+
+/* fieldset 把同一組單選或複選控制項包在一起。 */
+fieldset label {
+  display: inline-block;
+  margin: 6px 18px 6px 0;
+}
+
+legend {
+  padding: 0 8px;
+  font-weight: bold;
+}
+
+.form-actions {
+  /* Flex 讓不同寫法的按鈕排在同一列；空間不足時自動換行。 */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.form-actions button,
+.form-actions input[type="submit"],
+.form-actions input[type="reset"] {
+  /* 這個分組選擇器讓 button 和 input 按鈕共用相同外觀。 */
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background-color: #3730a3;
+  color: white;
+  cursor: pointer;
+}
+
+.form-actions button[type="reset"],
+.form-actions input[type="reset"] {
+  /* [type="reset"] 是屬性選擇器，只選取重設按鈕。 */
+  background-color: #475569;
+}
+
+.form-actions button:hover,
+.form-actions input:hover {
+  filter: brightness(1.15);
+}
+
+.form-actions button:disabled,
+.form-actions input:disabled {
+  /* :disabled 選取具有 disabled 屬性的控制項，呈現不可操作的狀態。 */
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  filter: none;
+}
+
+@media (max-width: 640px) {
+  /* @media 裡的規則只在畫面寬度小於等於 640px 時生效。 */
+  .practice-page {
+    width: auto;
+    margin: 0;
+    padding: 20px;
+    border-radius: 0;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
