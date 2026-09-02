@@ -493,3 +493,25 @@ fieldset >:last-child {
   border: 3px solid grey;
   overflow: auto;
 }
+
+.embed-frame {
+  /* iframe 的邊框與響應式寬度交給 CSS 統一控制。 */
+  max-width: 100%;
+  border: 0;
+}
+
+.flex-practice {
+  /* ul 是 Flex 容器，下一層的 li 會沿主軸橫向排列。 */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.flex-practice > .flex-item {
+  /* > 只選取 flex-practice 下一層的 flex-item。 */
+  flex: 1;
+  border: 2px solid black;
+  list-style: none;
+  text-align: center;
+}

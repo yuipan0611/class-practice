@@ -316,15 +316,31 @@
           </div>
         </form>
       </section>
-    </main>
-<div iframe https://www.ispan.com.tw/></div>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.004603539571!2d121.54083797595621!3d25.033917838293746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abd379a5ec97%3A0xedc006d25a9e35df!2z6LOH5bGV5ZyL6Zqb6IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1788319638962!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>></div>
-<div><iframe width="560" height="315" src="https://www.youtube.com/embed/7nZW4T6eJ4s?si=aodTjVA47TOm2DXa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<div><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfXxETK-6kPlxWAtMkGmShKotDTv08okFsjL2MUy45XYOwpeA/viewform?embedded=true" width="640" height="384" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
-</div>
-<hr>
-<p class="box1">
+      <div>
+        <!-- iframe 用 src 指定要嵌入的外部網頁；title 說明內容供輔助工具辨識。 -->
+        <iframe
+          class="embed-frame"
+          src="https://www.ispan.com.tw/"
+          title="資展國際網站"
+          width="600"
+          height="450"
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div>
+        <!-- Google 地圖也是一個 iframe，開始與結束標籤都要完整包住。 -->
+        <iframe class="embed-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.004603539571!2d121.54083797595621!3d25.033917838293746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abd379a5ec97%3A0xedc006d25a9e35df!2z6LOH5bGV5ZyL6Zqb6IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1788319638962!5m2!1szh-TW!2stw" title="資展國際地圖" width="600" height="450" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+      <div>
+        <!-- allow 列出影片可使用的瀏覽器功能；allowfullscreen 允許全螢幕播放。 -->
+        <iframe class="embed-frame" width="560" height="315" src="https://www.youtube.com/embed/7nZW4T6eJ4s?si=aodTjVA47TOm2DXa" title="YouTube 影片播放器" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div>
+        <!-- title 是 iframe 的必要說明；舊式 frameborder、marginheight、marginwidth 改由 CSS 控制。 -->
+        <iframe class="embed-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSfXxETK-6kPlxWAtMkGmShKotDTv08okFsjL2MUy45XYOwpeA/viewform?embedded=true" title="Google 表單" width="640" height="384">載入中…</iframe>
+      </div>
+      <hr>
+      <p class="box1">
   Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquam aliquid autem quidem maiores aspernatur veniam nobis sed ea iure quas laudantium, cupiditate iste dolores modi dignissimos repellendus est vitae!
   Fuga aspernatur qui laboriosam, quasi, ipsa doloribus dicta ex, obcaecati facilis distinctio nam. Doloremque sit beatae totam inventore veniam ab ipsa, eaque quae dolore fuga soluta porro quia accusantium maiores!
   Sunt ut possimus earum distinctio reiciendis blanditiis cumque impedit consectetur odit eum nam mollitia, esse laudantium facere similique qui sapiente natus ipsa quisquam dignissimos autem et magni ab illum. Sed?
@@ -335,16 +351,16 @@
   Assumenda quas possimus libero vitae laudantium repellendus dolore, natus obcaecati ex delectus facilis culpa at iusto vel provident in voluptas fugiat ducimus rerum reprehenderit! Ipsum esse iste illo commodi expedita.
   Distinctio, eveniet aut sapiente perferendis ducimus sequi a itaque? Neque quo soluta maxime rerum molestiae, laborum dolorem itaque sapiente voluptates libero. Dolorem nemo veritatis tempore dolore amet fugit vero ad!
   Quis perferendis deleniti maxime unde adipisci itaque quo atque non? Nesciunt excepturi quae recusandae qui accusantium accusamus autem tempora sequi earum. Ratione distinctio autem aspernatur ut nisi ducimus quod similique!
-</p>
-<ul class="box3" style="
-border: 2px solid black;
-style= "display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
-  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第二個項目</div>
-  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第三個項目</div>
-  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第一個項目</div>
-  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第四個項目</div>
-  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第五個項目</div>
-</ul>
+      </p>
+      <!-- ul 的直屬子元素必須是 li；Flex 排版改由 flex-practice 類別控制。 -->
+      <ul class="box3 flex-practice">
+        <li class="flex-item">這是第二個項目</li>
+        <li class="flex-item">這是第三個項目</li>
+        <li class="flex-item">這是第一個項目</li>
+        <li class="flex-item">這是第四個項目</li>
+        <li class="flex-item">這是第五個項目</li>
+      </ul>
+    </main>
     <footer>
       <!-- 頁內錨點：href="#theH1" 會跳回上方 id="theH1" 的主標題。 -->
       <a class="scroll-to-top" href="#theH1">回到頁首</a>
