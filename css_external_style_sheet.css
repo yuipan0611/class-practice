@@ -402,7 +402,8 @@ figure {
   border: 2px solid navy;
 }
 
-.basic-form > div {
+.basic-form > div,
+.basic-form fieldset > div {
   /* Grid 把一列表單分成 100px 標籤欄和剩餘寬度的輸入欄。 */
   display: grid;
   grid-template-columns: 100px 1fr;
@@ -411,9 +412,14 @@ figure {
 }
 
 .basic-form input,
+.basic-form select,
 .basic-form textarea {
-  /* 分組選取表單內的 input 與 textarea，避免重複寫相同宣告。 */
+  /* 表單控制項填滿 Grid 欄位，並允許在窄畫面中縮小。 */
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
   padding: 8px;
+  border: 1px solid #1d4ed8;
 }
 
 .basic-form textarea {
@@ -424,7 +430,9 @@ figure {
   /* 這一列改用 Flex，讓兩顆按鈕能在水平方向置中。 */
   display: flex;
   grid-template-columns: none;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 12px;
 }
 
 footer {
@@ -434,17 +442,54 @@ footer {
 .scroll-to-top,
 .scroll-to-top:visited {
   /* HTML 嵌套位置：footer > a.scroll-to-top（跳回同頁的 #theH1）。 */
-  color: #1d4ed8;
+  /* position: fixed 讓元素固定在瀏覽器視窗，不隨頁面捲動。 */
+  position: fixed;
+  right: 24px;   /* 距離視窗右邊 24px */
+  bottom: 24px;  /* 距離視窗底部 24px */
+  z-index: 999;  /* 疊在其他內容上方 */
+  padding: 10px 16px;
+  border-radius: 20%;
+  background-color: #1d4ed8;
+  color: #fff;
+  text-decoration: none;
+}
+
+.scroll-to-top:hover {
+  background-color: #1e40af;
 }
 
 @media (max-width: 640px) {
   /* @media 是媒體查詢：只有符合括號條件時，裡面的規則才會生效。 */
   /* 畫面小於等於 640px 時，表單改成單欄排列。 */
-  .basic-form > div {
+  .basic-form > div,
+  .basic-form fieldset > div {
     grid-template-columns: 1fr;
   }
 
   .table1 {
     font-size: 14px;
   }
+}
+fieldset {
+  border: 2px solid #1d4ed8;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+fieldset >:last-child {
+  border-bottom: 0px;
+  padding-bottom: 0px;
+}
+.box1 {
+  width: 600px;
+  height: 600px;
+  padding: 12px;
+  border: 3px solid grey;
+  overflow: auto;
+}
+.box3 {
+  width: 600px;
+  height: 600px;
+  padding: 12px;
+  border: 3px solid grey;
+  overflow: auto;
 }

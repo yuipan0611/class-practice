@@ -249,20 +249,65 @@
         <h2>表單基本練習</h2>
         <!-- action 是送出位置；method="get" 會把欄位資料放進網址參數。 -->
         <form class="basic-form" action="#" method="get">
-          <div>
-            <!-- label 的 for 必須和 input 的 id 相同，點標籤才會聚焦輸入欄。 -->
-            <label for="name">姓名：</label>
-            <!-- required 表示必填；placeholder 是提示字；minlength/maxlength 限制長度。 -->
-            <input type="text" id="name" name="name" autocomplete="name" required placeholder="請輸入姓名" maxlength="20" minlength="2">
-          </div>
-          <div>
-            <label for="password">密碼：</label>
-            <input type="password" id="password" name="password" autocomplete="current-password" required placeholder="請輸入密碼" maxlength="20" minlength="6">
-          </div>
+          <fieldset>
+            <legend>基本資料</legend>
+            <div>
+              <!-- label 的 for 必須和 input 的 id 相同，點標籤才會聚焦輸入欄。 -->
+              <label for="name">姓名：</label>
+              <!-- required 表示必填；placeholder 是提示字；minlength/maxlength 限制長度。 -->
+              <input type="text" id="name" name="name" autocomplete="name" required placeholder="請輸入姓名" maxlength="20" minlength="2">
+            </div>
+            <div>
+              <label for="password">密碼：</label>
+              <input type="password" id="password" name="password" autocomplete="current-password" required placeholder="請輸入密碼" maxlength="20" minlength="6">
+            </div>
+          </fieldset>
+
           <div>
             <label for="mymemo">備忘錄：</label>
             <!-- textarea 用於多行文字；name 是表單送出時使用的欄位名稱。 -->
             <textarea name="memo" id="mymemo" cols="30" rows="6" maxlength="150" placeholder="最大上限 150 字"></textarea>
+          </div>
+          <div>
+            <label for="myName">城市：</label>
+            <select id="myName" name="myName">
+              <option value="default" hidden>請選擇</option>
+              <option value="city1">Taipei</option>
+              <option value="city2">Taichung</option>
+              <option value="city3">Kaohsiung</option>
+            </select>
+          </div>
+          <div>
+            <label for="myfile">檔案上傳：</label>
+            <input type="file" id="myfile" name="myfile" multiple accept=".jpg,.png,.pdf">
+          </div>
+          <div>
+            <label for="birthdate">出生日期：</label>
+            <input type="datetime-local" id="birthdate" name="birthdate" value="2000-01-01T00:00" min="1950-01-01T00:00" max="2026-09-02T23:59">
+          </div>
+          <div>
+            <label for="myEmail">電子郵件：</label>
+            <input type="email" id="myEmail" name="myEmail" placeholder="請輸入電子郵件" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+          </div>
+          <div>
+            <label for="myURL">網址：</label>
+            <input type="url" id="myURL" name="myURL" placeholder="請輸入網址" required pattern="https?://.+">
+          </div>
+          <div>
+            <label for="myTel">電話：</label>
+            <input type="tel" id="myTel" name="myTel" placeholder="請輸入電話號碼" required pattern="[0-9]{2,4}-[0-9]{6,8}">
+          </div>
+          <div>
+            <label for="verification-code">驗證碼：</label>
+            <input type="text" id="verification-code" name="verification_code" maxlength="20" minlength="2" inputmode="numeric" placeholder="請輸入驗證碼">
+          </div>
+          <div>
+            <label for="myOTP">一次性密碼：</label>
+            <input type="text" id="myOTP" name="myOTP" maxlength="6" minlength="6" inputmode="numeric" placeholder="請輸入 6 位數字驗證碼">
+          </div>
+          <div>
+            <label for="myRange">數值範圍：</label>
+            <input type="range" id="myRange" name="myRange" min="0" max="100" value="50">
           </div>
           <div class="form-actions">
             <!-- type="submit" 送出表單；type="reset" 將欄位恢復為初始值。 -->
@@ -272,7 +317,34 @@
         </form>
       </section>
     </main>
-
+<div iframe https://www.ispan.com.tw/></div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.004603539571!2d121.54083797595621!3d25.033917838293746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abd379a5ec97%3A0xedc006d25a9e35df!2z6LOH5bGV5ZyL6Zqb6IKh5Lu95pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1788319638962!5m2!1szh-TW!2stw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>></div>
+<div><iframe width="560" height="315" src="https://www.youtube.com/embed/7nZW4T6eJ4s?si=aodTjVA47TOm2DXa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+<div><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfXxETK-6kPlxWAtMkGmShKotDTv08okFsjL2MUy45XYOwpeA/viewform?embedded=true" width="640" height="384" frameborder="0" marginheight="0" marginwidth="0">載入中…</iframe>
+</div>
+<hr>
+<p class="box1">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquam aliquid autem quidem maiores aspernatur veniam nobis sed ea iure quas laudantium, cupiditate iste dolores modi dignissimos repellendus est vitae!
+  Fuga aspernatur qui laboriosam, quasi, ipsa doloribus dicta ex, obcaecati facilis distinctio nam. Doloremque sit beatae totam inventore veniam ab ipsa, eaque quae dolore fuga soluta porro quia accusantium maiores!
+  Sunt ut possimus earum distinctio reiciendis blanditiis cumque impedit consectetur odit eum nam mollitia, esse laudantium facere similique qui sapiente natus ipsa quisquam dignissimos autem et magni ab illum. Sed?
+  Assumenda tenetur consequuntur totam reprehenderit id autem itaque error natus doloribus repudiandae accusantium nulla at impedit similique inventore, laborum corrupti beatae? Quo, vero quod quasi recusandae perspiciatis accusamus sequi perferendis?
+  Consequatur eos, quidem quia rem maiores ipsam iusto odit sequi iure, neque dolorum porro enim maxime obcaecati minus quaerat id sunt ullam fuga dicta. Corrupti vitae maxime corporis! Odit, provident?
+  Minus sunt quibusdam distinctio iure, veritatis at dicta. Qui, voluptate! Exercitationem saepe alias quae sapiente modi inventore magni aperiam rem! Quia, sint. Earum, rerum facere tempora mollitia reprehenderit excepturi delectus.
+  Deserunt quis blanditiis nobis quia architecto magni voluptate commodi nihil ea, modi incidunt at, omnis unde illo. Asperiores, ullam? Modi quos quasi maxime magnam numquam vitae, aperiam provident voluptates autem.
+  Assumenda quas possimus libero vitae laudantium repellendus dolore, natus obcaecati ex delectus facilis culpa at iusto vel provident in voluptas fugiat ducimus rerum reprehenderit! Ipsum esse iste illo commodi expedita.
+  Distinctio, eveniet aut sapiente perferendis ducimus sequi a itaque? Neque quo soluta maxime rerum molestiae, laborum dolorem itaque sapiente voluptates libero. Dolorem nemo veritatis tempore dolore amet fugit vero ad!
+  Quis perferendis deleniti maxime unde adipisci itaque quo atque non? Nesciunt excepturi quae recusandae qui accusantium accusamus autem tempora sequi earum. Ratione distinctio autem aspernatur ut nisi ducimus quod similique!
+</p>
+<ul class="box3" style="
+border: 2px solid black;
+style= "display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
+  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第二個項目</div>
+  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第三個項目</div>
+  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第一個項目</div>
+  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第四個項目</div>
+  <div style="flex: 1; text-align: center; border: 2px solid black;">這是第五個項目</div>
+</ul>
     <footer>
       <!-- 頁內錨點：href="#theH1" 會跳回上方 id="theH1" 的主標題。 -->
       <a class="scroll-to-top" href="#theH1">回到頁首</a>
